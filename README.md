@@ -37,8 +37,11 @@ phase
 completed
 }
 }
+```
 
 params:
+
+```
 {
 "taskId": 1
 }
@@ -55,8 +58,11 @@ phase
 completed
 }
 }
+```
 
 params:
+
+```
 {
 "data": {
 "phase": 2,

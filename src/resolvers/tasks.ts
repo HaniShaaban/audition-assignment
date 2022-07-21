@@ -34,7 +34,7 @@ export const addTask = (_, { data }) => {
       completed: false,
       id: lastID + 1,
       name,
-      phase,
+      phase: parseInt(phase),
     };
     tasksData.push(payload);
     return payload;
