@@ -8,6 +8,8 @@
 Query reference:
 
 1- Get tasks
+
+```
 query GetTasks {
 tasks {
 id
@@ -22,8 +24,11 @@ completed
 }
 }
 }
+```
 
 2- Mark Task as completed
+
+```
 mutation MarkComplete($taskId: ID!) {
 markCompleted(taskID: $taskId) {
 id
@@ -37,8 +42,11 @@ params:
 {
 "taskId": 1
 }
+```
 
 3- Add Task
+
+```
 mutation AddTask($data: taskInput) {
 addTask(data: $data) {
 id
@@ -55,3 +63,4 @@ params:
 "name": "Testing newly added task"
 }
 }
+```
