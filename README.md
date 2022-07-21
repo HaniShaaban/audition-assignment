@@ -1,10 +1,12 @@
 # audition-assignment
 
+```
 1- clone the project
 2- cd to audition-assignment
 3- npm install
 4- npm run start
 5- access the application by going to http://localhost:4000/
+```
 
 Query reference:
 
