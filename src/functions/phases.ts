@@ -1,7 +1,7 @@
 import { phasesData, PHASE_STATUS } from "./../data/seed";
 
 export const getPhase = (phaseID) => {
-  return phasesData.find((el) => el.id === phaseID);
+  return phasesData.find((el) => el.id === parseInt(phaseID));
 };
 
 export const markPhaseAsDone = (phaseID) => {

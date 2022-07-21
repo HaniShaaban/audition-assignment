@@ -1,4 +1,6 @@
-import { ApolloError } from "apollo-server";
+import { PHASE_STATUS } from "./../data/seed";
+import { getPhase } from "./../functions/phases";
+import { ApolloError, UserInputError } from "apollo-server";
 import { phasesData, Task, tasksData } from "../data/seed";
 import { updateTask } from "../functions/tasks";
 
@@ -28,6 +30,10 @@ export const markCompleted = (_, { taskID }) => {
 export const addTask = (_, { data }) => {
   try {
     const { name, phase } = data;
+    const desiredPhase = getPhase(phase);
+    if (!desiredPhase || desiredPhase?.status === PHASE_STATUS.DONE) {
+      return new UserInputError("Cannot add task to finished phases");
+    }
     // Getting last id in order to create the newly added task, for simplicity im using small numbers to test
     const lastID = tasksData[tasksData.length - 1].id;
     const payload: Task = {

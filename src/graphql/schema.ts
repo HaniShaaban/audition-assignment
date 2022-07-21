@@ -34,7 +34,7 @@ const typeDefs = gql`
 
   type Mutation {
     markCompleted(taskID: ID!): Task
-    addTask(data: taskInput): Task
+    addTask(data: taskInput!): Task
   }
 `;
 
